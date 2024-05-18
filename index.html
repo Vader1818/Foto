@@ -5,16 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Foto</title>
     <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background: transparent;
+        }
+
+        #addPhotoBtn {
+            background-color: #444444;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        #addPhotoBtn i {
+            font-size: 20px;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
         #photoContainer {
             width: 100%;
-            max-width: 1500px;
+            max-width: 100%;
             height: auto;
-            border: 2px solid #000;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            margin: auto;
+            margin: 10px 0;
         }
 
         #photoContainer img {
@@ -24,10 +54,11 @@
     </style>
 </head>
 <body>
-    <button id="addPhotoBtn">Adicionar Foto</button>
-    <input type="file" id="fileInput" accept="image/*" style="display:none;">
+    <button id="addPhotoBtn"><i class="fas fa-camera"></i>Adicionar Foto</button>
+    <input type="file" id="fileInput" accept="image/*">
     <div id="photoContainer"></div>
 
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
         document.getElementById('addPhotoBtn').addEventListener('click', function() {
             document.getElementById('fileInput').click();
